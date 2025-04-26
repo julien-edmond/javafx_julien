@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sio.d3.javafx.julien.AccueilController"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+
+        <TableView fx:id="tableViewQuestions" layoutX="59.0" layoutY="55.0"
+                   prefHeight="500.0" prefWidth="100.0">
+
+            <columns>
+
+                <TableColumn fx:id="enonce" prefWidth="150" text="Enoncé" >
+
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à un attribut dans la classe Quizz -->
+                    <cellValueFactory>
+                        <PropertyValueFactory property= "enonce"/>
+                    </cellValueFactory>
+
+                </TableColumn>
+
+
+                <TableColumn fx:id="bonne_reponse" prefWidth="150" text="Bonne réponse" >
+
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à un attribut dans la classe Quizz -->
+                    <cellValueFactory>
+                        <PropertyValueFactory property= "bonne_reponse"/>
+                    </cellValueFactory>
+
+                </TableColumn>
+
+            </columns>
+
+        </TableView>
+
+        <HBox fx:id="hbox1"  alignment="CENTER" spacing="40.0">
+            <Button fx:id="bouton_nouvelle_question" text="Ajouter une question" onAction="#formulaireNouvelleQuestion"/>
+        </HBox>
+
+    </children>
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+
+</VBox>
